@@ -33,7 +33,7 @@ RS485 A/B lines connect to the EM2M meter RS485 terminals.
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/dhruvkotian/em2m-esp32-driver.git
+git clone https://github.com/dhruvkotian/em2m-esp32-modbus.git
 
 2. Copy the `src` folder into your Arduino project or install as a library.
 
