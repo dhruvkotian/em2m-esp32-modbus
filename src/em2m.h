@@ -107,6 +107,8 @@ class EM2M {
   float exportActiveEnergy();
 
   float maxDemandActive();
+  float maxDemandReactive();
+  float maxDemandApparent();
 
 
   /* -----------------------------

@@ -199,3 +199,11 @@ float EM2M::exportActiveEnergy(){
 float EM2M::maxDemandActive(){
   return em2mRegisters[MAX_DEMAND_ACTIVE].value;
 }
+
+float EM2M::maxDemandReactive(){
+  return em2mRegisters[MAX_DEMAND_REACTIVE].value;
+}
+
+float EM2M::maxDemandApparent(){
+  return em2mRegisters[MAX_DEMAND_APPARENT].value;
+}
