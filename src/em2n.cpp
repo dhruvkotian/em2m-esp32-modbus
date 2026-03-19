@@ -147,3 +147,55 @@ const char* EM2M::deviceName()
 {
     return "EM2M Energy Meter";
 }
+
+/* ----------------------------------------------------
+  Clean get Functions (user - friendly api)
+---------------------------------------------------- */
+
+float EM2M::voltage(){
+  return em2mRegisters[VOLTAGE].value;
+}
+
+float EM2M::current(){
+  return em2mRegisters[CURRENT].value;
+}
+
+float EM2M::frequency(){
+  return em2mRegisters[FREQUENCY].value;
+}
+
+float EM2M::activePower(){
+  return em2mRegisters[ACTIVE_POWER].value;
+}
+
+float EM2M::apparentPower(){
+  return em2mRegisters[APPARENT_POWER].value;
+}
+
+float EM2M::reactivePower(){
+  return em2mRegisters[REACTIVE_POWER].value;
+}
+
+float EM2M::powerFactor(){
+  return em2mRegisters[POWER_FACTOR].value;
+}
+
+float EM2M::apparentEnergy(){
+  return em2mRegisters[APPARENT_ENERGY].value;
+}
+
+float EM2M::totalActiveEnergy(){
+  return em2mRegisters[TOTAL_ACTIVE_ENERGY].value;
+}
+
+float EM2M::importActiveEnergy(){
+  return em2mRegisters[IMPORT_ACTIVE_ENERGY].value;
+}
+
+float EM2M::exportActiveEnergy(){
+  return em2mRegisters[EXPORT_ACTIVE_ENERGY].value;
+}
+
+float EM2M::maxDemandActive(){
+  return em2mRegisters[MAX_DEMAND_ACTIVE].value;
+}

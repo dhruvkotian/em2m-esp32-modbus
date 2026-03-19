@@ -9,9 +9,9 @@ This library provides a clean Hardware Abstraction Layer (HAL) style interface f
 - Modbus RTU communication
 - RS485 direction control
 - Bulk register reading
-- Single parameter read
+- Cached data via `update()`
 - Retry mechanism for communication reliability
-- Clean API for embedded firmware
+- Clean getter API (`voltage()`, `current()`, etc.)
 
 ## Hardware Requirements
 
@@ -40,41 +40,20 @@ git clone https://github.com/dhruvkotian/em2m-esp32-modbus.git
 ## Example Usage
 
 ```cpp
-#include <ModbusMaster.h>
-#include "em2m.h"
-
-#define RXD2 16
-#define TXD2 17
-#define TX_ENABLE_PIN 4
+#include <em2m.h>
 
 ModbusMaster node;
-EM2M meter(node, TX_ENABLE_PIN);
+EM2M meter(node, 4);
 
-void setup(){
-  Serial.begin(115200);
-  Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2);
-
-  node.begin(1, Serial2);
-
-  Serial.println(meter.deviceName());
-}
-
-void loop(){
-  if(meter.update()){
-    Serial.print("Voltage: ");
-    Serial.println(meter.get(VOLTAGE));
-
-    Serial.print("Current: ");
-    Serial.println(meter.get(CURRENT));
-
-    Serial.print("Power Factor: ");
-    Serial.println(meter.get(POWER_FACTOR));
-  }
-
-  delay(2000);
+void loop() {
+    if (meter.update()) {
+        Serial.println(meter.voltage());
+        Serial.println(meter.current());
+    }
 }
 
  ```
+
 _Project inspired by [ModbusMaster](https://github.com/4-20ma/ModbusMaster)._
 
 ## Supported Parameters

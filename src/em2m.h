@@ -90,6 +90,26 @@ class EM2M {
   const char* getName(uint8_t index); // get parameter name
 
   /* -----------------------------
+  Clean getter (API)
+  ----------------------------- */
+  float voltage();
+  float current();
+  float frequency();
+  float powerFactor();
+
+  float activePower();
+  float reactivePower();
+  float apparentPower();
+
+  float apparentEnergy();
+  float totalActiveEnergy();
+  float importActiveEnergy();
+  float exportActiveEnergy();
+
+  float maxDemandActive();
+
+
+  /* -----------------------------
     Debug Utilities
   ----------------------------- */ 
   void printAll(Stream &serial);
